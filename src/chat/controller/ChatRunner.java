@@ -1,11 +1,14 @@
 package chat.controller;
 
+import chat.view.PopupDisplay;
+
 public class ChatRunner
 {
-	public static void main(String[] agrs)
+	public static void main(String [] agrs)
 	{
-		ChatController myApp = new ChatController();
-		myApp.start();
+		PopupDisplay sample = new PopupDisplay();
+		sample.displayText("asd");
+		sample.getResponse("asdflasdkfl");
 	}
 
 }
