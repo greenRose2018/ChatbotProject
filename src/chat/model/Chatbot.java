@@ -30,8 +30,20 @@ public class Chatbot
 		this.intro = null;
 		this.currentTime = null;
 		this.topics = null;
-		this.verbs = null;
+		this.verbs = new String [4];
 		this.followUps = null;
+		
+		buildVerbs();
+		
+		
+	}
+	
+	private void buildVerbs()
+	{
+		verbs[0] = "like";
+		verbs[1] = "dislike";
+		verbs[2] = "ambivlent about";
+		verbs[3] = "am thinking about";
 	}
 
 	private void buildMovieList()
