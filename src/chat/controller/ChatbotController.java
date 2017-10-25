@@ -1,11 +1,11 @@
 package chat.controller;
 
-public class ChatController
+public class ChatbotController
 {
 	//private PopupDisplay;
 	//private Chatbot;
 	
-	public ChatController()
+	public ChatbotController()
 	{
 		
 	}
