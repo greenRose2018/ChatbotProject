@@ -6,9 +6,8 @@ public class ChatRunner
 {
 	public static void main(String [] agrs)
 	{
-		PopupDisplay sample = new PopupDisplay();
-		sample.displayText("asd");
-		sample.getResponse("asdflasdkfl");
+		ChatbotController myApp = new ChatbotController();
+		myApp.start();
 	}
 
 }
