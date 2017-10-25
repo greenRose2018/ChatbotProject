@@ -36,7 +36,7 @@ public class Movie
 
 	public String getRatingMPAA()
 	{
-		return null;
+		return ratingMPAA; // changed
 	}
 
 	public String getReview()
@@ -46,7 +46,7 @@ public class Movie
 
 	public int getLength()
 	{
-		return -99999999;
+		return length; //changed
 	}
 
 	public LocalDate getReleaseDate()
@@ -59,32 +59,39 @@ public class Movie
 		return starScore;
 	}
 
-	public void setTitle(String title)
+	public void setTitle(String title) //added this to everything below this
 	{
+		this.title = title;
 	}
 
 	public void setGenre(String genre)
 	{
+		this.genre = genre;
 	}
 
 	public void setRatingMPAA(String ratingMPAA)
 	{
+		this.ratingMPAA = ratingMPAA;
 	}
 
 	public void setReview(String review)
 	{
+		this.review = review;
 	}
 
 	public void setLength(int length)
 	{
+		this.length = length;
 	}
 
 	public void setReleaseDate(LocalDate releaseDate)
 	{
+		this.releaseDate = releaseDate;
 	}
 
 	public void setStarScore(double starScore)
 	{
+		this.starScore = starScore;
 	}
 	
 	public String toString()

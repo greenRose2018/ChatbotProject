@@ -126,7 +126,7 @@ public class Chatbot
 
 	public String [] getQuestions()
 	{
-		return null;
+		return questions;//changed
 	}
 	
 	public String[] getVerbs()
@@ -156,12 +156,12 @@ public class Chatbot
 
 	public String getIntro()
 	{
-		return null;
+		return intro;//changed
 	}
 	
 	public LocalTime getCurrentTime()
 	{
-		return null;
+		return currentTime;//changed
 	}
 	
 	public void setUsername(String username)
