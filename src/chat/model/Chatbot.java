@@ -34,8 +34,8 @@ public class Chatbot
 		this.followUps = null;
 		
 		buildVerbs();
+		buildCuteAnimals();
 		buildShoppingList();
-		
 		
 	}
 	
@@ -49,8 +49,13 @@ public class Chatbot
 
 	private void buildMovieList()
 	{
-		//movieList.add();
-		//movieList.add();
+//		movieList.add("Hidden Figures");
+//		movieList.add("Spiderman");
+//		movieList.add("Spy");
+//		movieList.add("Doctor Strange");
+//		movieList.add("Iron Man");
+//		movieList.add("Green Hornet");
+//		movieList.add("suicide Squad");
 	}
 	
 	private void buildShoppingList()
@@ -64,8 +69,11 @@ public class Chatbot
 	
 	private void buildCuteAnimals()
 	{
-		cuteAnimalMemes.add("");
-		cuteAnimalMemes.add("");	
+		cuteAnimalMemes.add("pepe");
+		cuteAnimalMemes.add("pupper");
+		cuteAnimalMemes.add("otter");
+		cuteAnimalMemes.add("floofer");
+		cuteAnimalMemes.add("kittie");
 	}
 	
 	private void buildQuestions()
