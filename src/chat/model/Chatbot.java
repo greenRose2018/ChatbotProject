@@ -18,6 +18,10 @@ public class Chatbot
 	private String intro;
 	private LocalTime currentTime;
 	
+	public Chatbot()
+	{
+		
+	}
 	public Chatbot(String username)
 	{
 		this.movieList = new ArrayList<Movie>();
