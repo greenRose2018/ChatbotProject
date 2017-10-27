@@ -32,9 +32,9 @@ public class Chatbot
 		this.username = username;
 		this.content = null;
 		this.intro = null;
-		this.topics = null;
+		this.topics = new String[7];
 		this.verbs = new String [4];
-		this.followUps = null;
+		this.followUps = new String[5];
 		
 		buildVerbs();
 		buildCuteAnimals();
