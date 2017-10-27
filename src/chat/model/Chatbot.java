@@ -28,7 +28,6 @@ public class Chatbot
 		this.username = username;
 		this.content = null;
 		this.intro = null;
-		this.currentTime = null;
 		this.topics = null;
 		this.verbs = new String [4];
 		this.followUps = null;
