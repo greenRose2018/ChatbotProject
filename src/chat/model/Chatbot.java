@@ -37,9 +37,9 @@ public class Chatbot
 		this.followUps = new String[5];
 		
 		buildVerbs();
-		buildCuteAnimals();
 		buildShoppingList();
-		
+		buildMovieList();
+		buildCuteAnimals();
 	}
 	
 	private void buildVerbs()
@@ -52,13 +52,12 @@ public class Chatbot
 
 	private void buildMovieList()
 	{
-//		movieList.add("Hidden Figures");
-//		movieList.add("Spiderman");
-//		movieList.add("Spy");
-//		movieList.add("Doctor Strange");
-//		movieList.add("Iron Man");
-//		movieList.add("Green Hornet");
-//		movieList.add("suicide Squad");
+		movieList.add(new Movie(""));
+		movieList.add(new Movie("Spiderman"));
+		movieList.add(new Movie("Hidden Figures"));
+		//movieList.add(new Movie("Spy"));
+		movieList.add(new Movie("Doctor Strange"));
+		movieList.add(new Movie("Green Hornet"));
 	}
 	
 	private void buildShoppingList()
