@@ -18,7 +18,7 @@ public class PopupDisplay
 		JOptionPane.showMessageDialog(null, message, windowTitle, JOptionPane.INFORMATION_MESSAGE, icon);
 	}
 	
-	public String getResponse(String question)
+	public String collectResponse(String question)
 	{
 		String answer ="";
 		answer += JOptionPane.showInputDialog(null, question, windowTitle, JOptionPane.PLAIN_MESSAGE, icon, null,"");
