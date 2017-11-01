@@ -28,7 +28,7 @@ public class Chatbot
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = new ArrayList<String>();
 		this.currentTime = null;
-		this.questions = null;
+		this.questions = new String[10];
 		this.username = username;
 		this.content = null;
 		this.intro = null;
@@ -40,6 +40,7 @@ public class Chatbot
 		buildShoppingList();
 		buildMovieList();
 		buildCuteAnimals();
+		buildQuestions();
 	}
 	
 	private void buildVerbs()
@@ -86,7 +87,16 @@ public class Chatbot
 	
 	private void buildQuestions()
 	{
-		
+		questions[0] = "What is your name?";
+		questions[1] = "?";
+		questions[2] = "?";
+		questions[3] = "?";
+		questions[4] = "?";
+		questions[5] = "?";
+		questions[6] = "?";
+		questions[7] = "?";
+		questions[8] = "?";
+		questions[9] = "?";
 	}
 	
 	public String processConversation(String input)
