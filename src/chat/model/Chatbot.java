@@ -30,7 +30,7 @@ public class Chatbot
 		this.currentTime = null;
 		this.questions = new String[10];
 		this.username = username;
-		this.content = null;
+		this.content = " hi there, content , some words";
 		this.intro = null;
 		this.topics = new String[7];
 		this.verbs = new String [4];
@@ -41,6 +41,8 @@ public class Chatbot
 		buildMovieList();
 		buildCuteAnimals();
 		buildQuestions();
+		//buildFollowups();
+		//buildTopics();
 	}
 	
 	private void buildVerbs()
@@ -76,6 +78,16 @@ public class Chatbot
 		shoppingList.add("pencil");
 	}
 	
+	private void buildTopics()
+	{
+		
+	}
+	
+	private void buildFollowups()
+	{
+		
+	}
+	
 	private void buildCuteAnimals()
 	{
 		cuteAnimalMemes.add("pepe");
@@ -109,6 +121,7 @@ public class Chatbot
 		
 		return chatbotResponse;
 	}
+	
 	private String buildChatbotResponse()
 	{
 		String response = "";
@@ -125,7 +138,8 @@ public class Chatbot
 		return response;
 		
 	}
-public boolean lengthChecker(String input)
+	
+	public boolean lengthChecker(String input)
 	{
 		boolean validLength = false;
 		
@@ -152,6 +166,12 @@ public boolean lengthChecker(String input)
 	
 	public boolean contentChecker(String contentCheck)
 	{
+		
+		if(contentCheck != " " && contentCheck != "words" && contentCheck != "some")
+		{
+			return true;
+		}
+		
 		return false;
 	}
 	
@@ -177,6 +197,10 @@ public boolean lengthChecker(String input)
 
 	public boolean quitChecker(String exitString)
 	{
+		if(exitString.equalsIgnoreCase("quit"))
+		{
+			return true;
+		}
 		return false;
 	}
 
