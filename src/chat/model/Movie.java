@@ -20,12 +20,12 @@ public class Movie
 	public Movie(String title)
 	{
 		this.title = title;
-		this.genre = null;
-		this.ratingMPAA = null;
-		this.review = null;
-		this.length = -99;
+		this.genre = "green";
+		this.ratingMPAA = "PG";
+		this.review = "it was a good movie";
+		this.length = 11;
 		this.releaseDate = null;
-		this.starScore = Double.NaN;
+		this.starScore = 9.00;
 	}
 
 	public String getTitle()
@@ -35,7 +35,7 @@ public class Movie
 
 	public String getGenre()
 	{
-		this.genre = "@@@@@@@";
+		//this.genre = "sci-fi";
 		return genre;
 	}
 
