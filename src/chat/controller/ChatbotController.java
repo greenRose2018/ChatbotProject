@@ -35,9 +35,9 @@ public class ChatbotController
 	
 	private String popupChat(String chat)
 	{
-		String chatbotSays = "";
+		String chatbotSays = ""; //Assigns a valid value to a variable that will be returned for the method.
 		
-		chatbotSays += chatbot.processConversation(chat);
+		chatbotSays += chatbot.processConversation(chat); //gets response back from processConversation method in Chatbot 
 		
 		return chatbotSays;
 	}
@@ -47,4 +47,13 @@ public class ChatbotController
 		return null;
 	}
 	
+	public PopupDisplay getDisplay()
+	{
+		return null;
+	}
+	
+	public ChatFrame getChatFrame()
+	{
+		return null;
+	}
 }
