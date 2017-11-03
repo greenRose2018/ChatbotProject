@@ -68,7 +68,6 @@ public class Chatbot
 		shoppingList.add("snacks");
 		shoppingList.add("veggies");
 		shoppingList.add("protein");
-		shoppingList.add("slug bait");
 		shoppingList.add("gross things");
 		shoppingList.add("avacado");
 		shoppingList.add("bananas");
@@ -90,7 +89,7 @@ public class Chatbot
 	
 	private void buildCuteAnimals()
 	{
-		cuteAnimalMemes.add("pepe");
+		//cuteAnimalMemes.add("pepe");
 		cuteAnimalMemes.add("pupper");
 		cuteAnimalMemes.add("otter");
 		cuteAnimalMemes.add("floofer");
@@ -100,15 +99,15 @@ public class Chatbot
 	private void buildQuestions()
 	{
 		questions[0] = "What is your name?";
-		questions[1] = "?";
-		questions[2] = "?";
-		questions[3] = "?";
-		questions[4] = "?";
-		questions[5] = "?";
-		questions[6] = "?";
-		questions[7] = "?";
-		questions[8] = "?";
-		questions[9] = "?";
+		questions[1] = "What color do you like?";
+		questions[2] = "What movies did you watch recently?";
+		questions[3] = "What game did you play recently?";
+		questions[4] = "What type of animals do you like?";
+		questions[5] = "What is your horoscope?";
+		questions[6] = "What type of icecream do you like?";
+		questions[7] = "Do you play sport? If, so what sport do you play?";
+		questions[8] = "Are you a good person or a bad person? If, so how?";
+		questions[9] = "What type of car do you want?";
 	}
 	
 	public String processConversation(String input)
@@ -116,8 +115,6 @@ public class Chatbot
 		String chatbotResponse = "";
 		chatbotResponse += "you said: " + "\n" + input + "\n";
 		chatbotResponse += buildChatbotResponse();
-		
-		
 		
 		return chatbotResponse;
 	}
@@ -136,7 +133,6 @@ public class Chatbot
 		response += questions[random];
 		
 		return response;
-		
 	}
 	
 	public boolean lengthChecker(String input)
@@ -177,12 +173,52 @@ public class Chatbot
 	
 	public boolean cuteAnimalMemeChecker(String input)
 	{
+		for(String meme:cuteAnimalMemes)
+		{
+			if(input.equals(meme))
+			{
+				return true;
+			}
+		}
 		return false;
 	}
 	
 	public boolean shoppingListChecker(String shoppingItem)
 	{
+		
+		for(String item:shoppingList)
+		{
+			if(shoppingItem.equals(item))
+			{
+				return true;
+			}
+		}
+		
+//		int num = 0;
+//		while(num < 4)
+//		{
+//			if (shoppingList.contains("protein"))
+//			{
+//				num+=1;
+//			}
+//			if(shoppingList.contains("slug bait"))
+//			{
+//				num+=1;
+//			}
+//			if(shoppingList.contains("veggies"))
+//			{
+//				num+=1;
+//			}
+//			if(shoppingList.contains("snacks"))
+//			{
+//				num+=1;
+//			}
+//			
+//			return true;
+//		}
+		
 		return false;
+		
 	}
 	
 	public boolean movieTitleChecker(String title)
