@@ -163,7 +163,7 @@ public class Chatbot
 	public boolean contentChecker(String contentCheck)
 	{
 		
-		if(contentCheck != " " && contentCheck != "words" && contentCheck != "some")
+		if(contentCheck.contains(content))
 		{
 			return true;
 		}
