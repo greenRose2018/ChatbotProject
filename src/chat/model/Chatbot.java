@@ -152,6 +152,14 @@ public class Chatbot
 	
 	public boolean htmlTagChecker(String input)
 	{
+		String[] htmlTag = {"<B>  </B>","<P>","<I> sdadas </i>","<A HREF=\"sdfs.html\"> </a>"};
+		for(String tag:htmlTag)
+		{
+			if(input.equals(tag))
+			{
+				return true;
+			}
+		}
 		return false;
 	}
 	
