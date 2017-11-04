@@ -30,8 +30,8 @@ public class Chatbot
 		this.currentTime = null;
 		this.questions = new String[10];
 		this.username = username;
-		this.content = " hi there, content , some words";
-		this.intro = null;
+		this.content = " hi there, content , other content";
+		this.intro = "hello my name is Brit";
 		this.topics = new String[7];
 		this.verbs = new String [4];
 		this.followUps = new String[5];
@@ -75,6 +75,7 @@ public class Chatbot
 		shoppingList.add("apples");
 		shoppingList.add("paper");
 		shoppingList.add("pencil");
+		shoppingList.add("pumpkin chocolate chip cookies");
 	}
 	
 	private void buildTopics()
@@ -89,7 +90,6 @@ public class Chatbot
 	
 	private void buildCuteAnimals()
 	{
-		//cuteAnimalMemes.add("pepe");
 		cuteAnimalMemes.add("pupper");
 		cuteAnimalMemes.add("otter");
 		cuteAnimalMemes.add("floofer");
