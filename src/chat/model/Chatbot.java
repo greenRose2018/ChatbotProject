@@ -165,7 +165,11 @@ public class Chatbot
 	
 	public boolean userNameChecker(String input)
 	{
-		return false;
+			if(input.equals(username))
+			{
+				return true;
+			}
+			return false;
 	}
 	
 	public boolean contentChecker(String contentCheck)
