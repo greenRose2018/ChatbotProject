@@ -242,6 +242,14 @@ public class Chatbot
 
 	public boolean keyboardMashChecker(String sample)
 	{
+		String[] keyboardMash = {"sdf","SDF","dfg","cvb",",./","kjh","DFG","CVB","KJH"};
+		for(String mash:keyboardMash)
+		{
+			if(sample.equals(mash))
+			{
+				return true;
+			}
+		}
 		return false;
 	}
 	
