@@ -235,6 +235,19 @@ public class Chatbot
 	
 	public boolean movieTitleChecker(String title)
 	{
+		movieList.toString();
+//		if(movieList.toString().equals(title))
+//		{
+//			return true;
+//		}
+		// need help
+		for(Movie movie:movieList)
+		{
+			if(title.equals(movie.toString()))
+			{
+				return true;
+			}
+		}
 		return false;
 	}
 	
