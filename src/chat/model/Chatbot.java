@@ -309,4 +309,10 @@ public class Chatbot
 	{
 		this.content = content;
 	}
+
+	public String toString()
+	{
+		String description = "1";
+		return description;
+	}
 }
