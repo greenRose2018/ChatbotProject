@@ -228,6 +228,14 @@ public class Chatbot
 	
 	public boolean movieGenreChecker(String genre)
 	{
+		String[] movieGenre = {"Documentary", "Thriller"};
+		for(String type:movieGenre)
+		{
+			if (genre.equals(type))
+			{
+				return true;
+			}
+		}
 		return false;
 	}
 
