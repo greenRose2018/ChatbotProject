@@ -165,6 +165,7 @@ public class Chatbot
 	
 	public boolean userNameChecker(String input)
 	{
+			this.username = "@codyhenrichse";
 			if(input.equals(username))
 			{
 				return true;
@@ -235,7 +236,7 @@ public class Chatbot
 	
 	public boolean movieTitleChecker(String title)
 	{
-		movieList.toString();
+		//movieList.toString();
 //		if(movieList.toString().equals(title))
 //		{
 //			return true;
@@ -243,7 +244,8 @@ public class Chatbot
 		// need help
 		for(Movie movie:movieList)
 		{
-			if(title.equals(movie.toString()))
+			
+			if(title.equals(movie))
 			{
 				return true;
 			}
@@ -266,10 +268,14 @@ public class Chatbot
 
 	public boolean quitChecker(String exitString)
 	{
+		
 		if(exitString.equalsIgnoreCase("quit"))
 		{
+		
 			return true;
 		}
+		
+		
 		return false;
 	}
 
@@ -323,6 +329,7 @@ public class Chatbot
 
 	public String getUsername()
 	{
+		
 		return username;
 	}
 	
