@@ -43,7 +43,6 @@ public class ChatbotTest
 		assertNotNull("Questions must be created", testedChatbot.getQuestions());
 		assertFalse("Questions array is too small", testedChatbot.getQuestions().length < 6);
 		
-		
 	}
 
 	@Test

@@ -27,7 +27,7 @@ public class Chatbot
 		this.movieList = new ArrayList<Movie>();
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = new ArrayList<String>();
-		this.currentTime = null;
+		this.currentTime = LocalTime.now();
 		this.questions = new String[10];
 		this.username = username;
 		this.content = " hi there, content , other content";
@@ -170,6 +170,7 @@ public class Chatbot
 			{
 				return true;
 			}
+		}
 			return false;
 	}
 	

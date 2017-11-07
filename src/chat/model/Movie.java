@@ -24,13 +24,13 @@ public class Movie
 		this.ratingMPAA = "G";
 		this.review = "it was a good movie";
 		this.length = 100;
-		this.releaseDate = null;
+		this.releaseDate = LocalDate.now();
 		this.starScore = 6.5;
+		
 	}
 
 	public String getTitle()
 	{
-		this.title = "temp";
 		return title;
 	}
 
