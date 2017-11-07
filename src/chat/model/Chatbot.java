@@ -55,10 +55,10 @@ public class Chatbot
 
 	private void buildMovieList()
 	{
-		movieList.add(new Movie(""));
+		movieList.add(new Movie("Hello"));
 		movieList.add(new Movie("Spiderman"));
 		movieList.add(new Movie("Hidden Figures"));
-		movieList.add(new Movie("Spy"));
+		movieList.add(new Movie("Spy Next Door"));
 		movieList.add(new Movie("Doctor Strange"));
 		movieList.add(new Movie("Green Hornet"));
 	}
