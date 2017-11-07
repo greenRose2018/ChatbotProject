@@ -19,7 +19,17 @@ public class Movie
 	
 	public Movie(String title)
 	{
-		this.title = title;
+		
+		if(title.length() < 3)
+		{
+			this.title = "Title: " + title;
+			
+		}
+		else
+		{
+			this.title = title;
+		}
+		
 		this.genre = "sci-fi";
 		this.ratingMPAA = "G";
 		this.review = "it was a good movie";
@@ -28,7 +38,7 @@ public class Movie
 		this.starScore = 6.5;
 		
 	}
-
+	
 	public String getTitle()
 	{
 		return title;
