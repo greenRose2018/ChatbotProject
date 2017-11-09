@@ -30,7 +30,8 @@ public class ChatbotController
 	
 	public String interactWithChatbot(String input)
 	{
-		return null;
+		String response = "What do you do?";
+		return response;
 	}
 	
 	private String popupChat(String chat)
@@ -44,6 +45,7 @@ public class ChatbotController
 	
 	public Chatbot getChatbot()
 	{
+		// instanceof Chatbot;
 		return null;
 	}
 	

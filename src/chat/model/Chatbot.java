@@ -110,6 +110,12 @@ public class Chatbot
 		questions[9] = "What type of car do you want?";
 	}
 	
+	/**
+	 * This method does calls buildChabotResponse, which randomly pulls a verb,topic,movieList,or movietitle and returns a response. 
+	 * Takes the user input and combines with a generated response and returns it.
+	 * @param input The user's supplied text.
+	 * @return The combined user input and chatbot response 
+	 */
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
@@ -119,6 +125,10 @@ public class Chatbot
 		return chatbotResponse;
 	}
 	
+	/**
+	 * Builds a random response using the chatbot's sentence part arrays.
+	 * @return The random response of the chatbot.
+	 */
 	private String buildChatbotResponse()
 	{
 		String response = "";
@@ -144,6 +154,11 @@ public class Chatbot
 		return response;
 	}
 	
+	/**
+	 * Checks the response length of the user input
+	 * @param input user's response
+	 * @return true/false if response is larger than 2
+	 */
 	public boolean lengthChecker(String input)
 	{
 		boolean validLength = false;
@@ -159,6 +174,11 @@ public class Chatbot
 		return validLength;
 	}
 	
+	/**
+	 * checks for an htmlTag
+	 * @param input The user's response
+	 * @return True if user's response is a htmlTag
+	 */
 	public boolean htmlTagChecker(String input)
 	{
 		String[] htmlTag = {"<B>  </B>","<P>","<I> sdadas </i>","<A HREF=\"sdfs.html\"> </a>"};
@@ -172,6 +192,11 @@ public class Chatbot
 		return false;
 	}
 	
+	/**
+	 * 
+	 * @param input
+	 * @return
+	 */
 	public boolean userNameChecker(String input)
 	{
 		if(lengthChecker(input) == true)
@@ -184,7 +209,11 @@ public class Chatbot
 		}
 			return false;
 	}
-	
+	/**
+	 * 
+	 * @param contentCheck
+	 * @return
+	 */
 	public boolean contentChecker(String contentCheck)
 	{
 		
