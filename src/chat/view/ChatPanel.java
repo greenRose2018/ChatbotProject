@@ -1,7 +1,5 @@
 package chat.view;
 
-public class ChatPanel
-{
 import chat.controller.ChatbotController;
 import javax.swing.JPanel;
 import javax.swing.JButton;
@@ -10,4 +8,12 @@ import javax.swing.JComponent;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+public class ChatPanel extends JPanel
+{
+	private ChatbotController baseController;
+	private JButton chatButton;
+	private SpringLayout baseLayout;
+	private JTextField inputField;
+	private JTextArea chatArea;
+	
 }
