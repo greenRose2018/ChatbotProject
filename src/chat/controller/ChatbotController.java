@@ -1,20 +1,21 @@
 package chat.controller;
 
 import chat.model.Chatbot;
-import chat.model.Movie;
 import chat.view.PopupDisplay;
 import chat.view.ChatFrame;
-import chat.view.ChatPanel;
 
 public class ChatbotController
 {
 	private PopupDisplay display;
 	private Chatbot chatbot;
+	private ChatFrame appFrame;
 	
 	public ChatbotController()
 	{
 		chatbot = new Chatbot("Brittney Morales");
+		//View initialized after model
 		display = new PopupDisplay();
+		appFrame = new ChatFrame(this);
 	}
 	
 	public void start()
@@ -45,7 +46,7 @@ public class ChatbotController
 	
 	public Chatbot getChatbot()
 	{
-		// instanceof Chatbot;
+		
 		return null;
 	}
 	
