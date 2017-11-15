@@ -16,4 +16,20 @@ public class ChatPanel extends JPanel
 	private JTextField inputField;
 	private JTextArea chatArea;
 	
+	public ChatPanel(ChatbotController baseController)
+	{
+		super();
+		this.baseController = baseController;
+	}
+	
+	private void setupPanel()
+	{
+	}
+	private void setupLayout()
+	{
+	}
+	
+	private void setupListeners()
+	{
+	}
 }
