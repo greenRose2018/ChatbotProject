@@ -46,17 +46,16 @@ public class ChatbotController
 	
 	public Chatbot getChatbot()
 	{
-		
-		return null;
+		return chatbot;
 	}
 	
 	public PopupDisplay getDisplay()
 	{
-		return null;
+		return display;
 	}
 	
 	public ChatFrame getChatFrame()
 	{
-		return null;
+		return appFrame;
 	}
 }
