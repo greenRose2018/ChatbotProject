@@ -18,24 +18,24 @@ public class ChatPanel extends JPanel
 	private SpringLayout baseLayout;
 	private JTextField inputField;
 	private JTextArea chatArea;
-	
+
 	public ChatPanel(ChatbotController baseController)
 	{
 		super();
 		this.baseController = baseController;
-		
 		//initialize GUI data members
+
 		chatButton = new JButton("chat");
 		baseLayout = new SpringLayout();
 		inputField = new JTextField(25);
 		chatArea = new JTextArea(10, 25);
-		
+
 		setupPanel();
 		setupLayout();
 		setupListeners();
-		
+
 	}
-	
+
 	/**
 	 * sets up the window with color,layout, and adds components
 	 */
@@ -46,7 +46,7 @@ public class ChatPanel extends JPanel
 		this.add(chatButton);
 		this.add(inputField);
 		this.add(chatArea);
-		
+
 	}
 	
 	private void setupLayout()
@@ -70,9 +70,14 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				
+				String userText = inputField.getText();
+				String displayText = baseController.interactWithChatbot(userText);
+				chatArea.append(displayText);
+				inputField.setText("");
+			}
+		});
+
 			}
 		});
 	}
-	
 }
