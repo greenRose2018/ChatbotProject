@@ -8,6 +8,10 @@ public class ChatFrame extends JFrame
 	private ChatbotController baseController;
 	private ChatPanel firstPanel;
 	
+	public ChatFrame()
+	{
+		
+	}
 	public ChatFrame(ChatbotController baseController)
 	{
 		super();
