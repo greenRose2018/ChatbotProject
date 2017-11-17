@@ -15,6 +15,9 @@ public class ChatPanel extends JPanel
 {
 	private ChatbotController baseController;
 	private JButton chatButton;
+	private JButton checkerButton;
+	private JButton exitButton;
+	private JButton randomButton;
 	private SpringLayout baseLayout;
 	private JTextField inputField;
 	private JTextArea chatArea;
@@ -23,10 +26,14 @@ public class ChatPanel extends JPanel
 	{
 		super();
 		this.baseController = baseController;
-		//initialize GUI data members
 
+		// initialize GUI data members
 		chatButton = new JButton("chat");
+		exitButton = new JButton("Exit");
+		randomButton = new JButton("Random, Click me");
+		checkerButton = new JButton("check");
 		baseLayout = new SpringLayout();
+
 		inputField = new JTextField(25);
 		chatArea = new JTextArea(10, 25);
 
@@ -43,27 +50,41 @@ public class ChatPanel extends JPanel
 	{
 		this.setBackground(Color.CYAN);
 		this.setLayout(baseLayout);
+		//buttons
 		this.add(chatButton);
+		this.add(exitButton);
+		this.add(randomButton);
+		this.add(checkerButton);
+		
+		//text area
 		this.add(inputField);
 		this.add(chatArea);
+		chatArea.setEnabled(false);
+		chatArea.setEditable(false);
 
 	}
-	
+
 	private void setupLayout()
 	{
-		//TextArea
+		// TextArea
 		baseLayout.putConstraint(SpringLayout.WEST, inputField, 0, SpringLayout.WEST, chatArea);
 		baseLayout.putConstraint(SpringLayout.EAST, chatButton, 0, SpringLayout.EAST, chatArea);
 		baseLayout.putConstraint(SpringLayout.NORTH, chatArea, 20, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, chatArea, 25, SpringLayout.WEST, this);
 		baseLayout.putConstraint(SpringLayout.EAST, chatArea, -25, SpringLayout.EAST, this);
-		//TextField
+
+		// TextField
 		baseLayout.putConstraint(SpringLayout.NORTH, inputField, 0, SpringLayout.NORTH, chatButton);
 		baseLayout.putConstraint(SpringLayout.SOUTH, inputField, 0, SpringLayout.SOUTH, chatButton);
-		//Btn SpringLayout
+
+		// buttons
 		baseLayout.putConstraint(SpringLayout.SOUTH, chatButton, -34, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, randomButton, 0, SpringLayout.NORTH, exitButton);
+		baseLayout.putConstraint(SpringLayout.WEST, exitButton, 0, SpringLayout.WEST, chatButton);
+		baseLayout.putConstraint(SpringLayout.SOUTH, exitButton, -6, SpringLayout.NORTH, chatButton);
+		baseLayout.putConstraint(SpringLayout.WEST, randomButton, -5, SpringLayout.WEST, chatArea);
 	}
-	
+
 	private void setupListeners()
 	{
 		chatButton.addActionListener(new ActionListener()
@@ -77,7 +98,38 @@ public class ChatPanel extends JPanel
 			}
 		});
 
+		checkerButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+
 			}
 		});
+
+		exitButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				changeRandomColor();
+			}
+
+		});
+
+		randomButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				changeRandomColor();
+			}
+		});
+	}
+
+	private void changeRandomColor()
+	{
+		int red = (int) (Math.random() * 256);
+		int blue = (int) (Math.random() * 256);
+		int green = (int) (Math.random() * 256);
+
+		this.setBackground(new Color(red, green, blue));
 	}
 }
