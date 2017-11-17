@@ -37,11 +37,21 @@ public class ChatbotController
 	{
 		String response = "What do you want to talk about?";
 		
+		if(chatbot.quitChecker(input))
+		{
+			close();
+		}
+		
 		response += chatbot.processConversation(input);
 		
 		return response;
 	}
 	
+	private void close()
+	{
+		display.displayText("Goodbye");
+		System.exit(0);
+	}
 	
 	private String popupChat(String chat)
 	{
