@@ -36,6 +36,9 @@ public class ChatPanel extends JPanel
 		
 	}
 	
+	/**
+	 * sets up the window with color,layout, and adds components
+	 */
 	private void setupPanel()
 	{
 		this.setBackground(Color.CYAN);
