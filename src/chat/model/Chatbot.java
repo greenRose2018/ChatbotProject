@@ -119,7 +119,7 @@ public class Chatbot
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
-		chatbotResponse += "you said: " + "\n" + input + "\n";
+		chatbotResponse += "\n" + "you said: " + "\n" + input + "\n";
 		chatbotResponse += buildChatbotResponse();
 		
 		return chatbotResponse;
