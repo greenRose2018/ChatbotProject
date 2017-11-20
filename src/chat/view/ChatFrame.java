@@ -10,7 +10,7 @@ public class ChatFrame extends JFrame
 	
 	public ChatFrame()
 	{
-		
+		ChatbotController baseController = new ChatbotController();
 	}
 	public ChatFrame(ChatbotController baseController)
 	{
