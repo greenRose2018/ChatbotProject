@@ -8,14 +8,10 @@ public class ChatFrame extends JFrame
 	private ChatbotController baseController;
 	private ChatPanel firstPanel;
 	
-	public ChatFrame()
-	{
-		ChatbotController baseController = new ChatbotController();
-	}
 	public ChatFrame(ChatbotController baseController)
 	{
 		super();
-		this.baseController = baseController;
+		this.setBaseController(baseController);
 		firstPanel = new ChatPanel(baseController);
 		
 		setupFrame();
@@ -28,5 +24,13 @@ public class ChatFrame extends JFrame
 		this.setSize(600, 600);
 		this.setResizable(false);
 		this.setVisible(true);
+	}
+	public ChatbotController getBaseController()
+	{
+		return baseController;
+	}
+	public void setBaseController(ChatbotController baseController)
+	{
+		this.baseController = baseController;
 	}
 }
