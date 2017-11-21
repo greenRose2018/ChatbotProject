@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 /**
  * The JPanel subclass for the chatbot project.
  * @author brittney.morales
- * @version 11-21-17 1.0
+ * @version 11-21-17 1.2
  */
 public class ChatPanel extends JPanel
 {
@@ -28,7 +28,7 @@ public class ChatPanel extends JPanel
 	private JTextArea chatArea;
 
 	/**
-	 * 
+	 * Initializes GUI data members, also calling Panel, layout, and listeners methods
 	 * @param baseController
 	 */
 	public ChatPanel(ChatbotController baseController)
@@ -53,7 +53,7 @@ public class ChatPanel extends JPanel
 	}
 
 	/**
-	 * sets up the window with color,layout, and adds components
+	 * sets up the window with color,layout, and adds components to the ChatFrame
 	 */
 	private void setupPanel()
 	{
@@ -74,7 +74,7 @@ public class ChatPanel extends JPanel
 	}
 
 	/**
-	 * 
+	 * the constraint on the components on the Frame
 	 */
 	private void setupLayout()
 	{
@@ -98,7 +98,7 @@ public class ChatPanel extends JPanel
 	}
 
 	/**
-	 * 
+	 * Listening for the components to take action once they are clicked
 	 */
 	private void setupListeners()
 	{
@@ -117,7 +117,10 @@ public class ChatPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-
+				String userText = inputField.getText();
+				String displayText = baseController.useCheckers(userText);
+				chatArea.append(displayText);
+				inputField.setText("");
 			}
 		});
 
@@ -140,7 +143,7 @@ public class ChatPanel extends JPanel
 	}
 
 	/**
-	 * 
+	 * A method to change the Background color of the Frame
 	 */
 	private void changeRandomColor()
 	{

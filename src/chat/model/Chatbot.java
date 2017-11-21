@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 /**
  * 
- * @author bmor9741
- *
+ * @author brittney.morales
+ * @version 11/21/17 1.2
  */
 public class Chatbot
 {

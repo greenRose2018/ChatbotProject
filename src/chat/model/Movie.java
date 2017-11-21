@@ -4,8 +4,8 @@ import java.time.LocalDate;
 
 /**
  * 
- * @author bmor9741
- *
+ * @author brittney.morales
+ * @version 11/21/17 1.2
  */
 public class Movie
 {
