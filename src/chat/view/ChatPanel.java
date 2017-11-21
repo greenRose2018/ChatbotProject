@@ -11,6 +11,11 @@ import javax.swing.JComponent;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+/**
+ * The JPanel subclass for the chatbot project.
+ * @author brittney.morales
+ * @version 11-21-17 1.0
+ */
 public class ChatPanel extends JPanel
 {
 	private ChatbotController baseController;
@@ -22,6 +27,10 @@ public class ChatPanel extends JPanel
 	private JTextField inputField;
 	private JTextArea chatArea;
 
+	/**
+	 * 
+	 * @param baseController
+	 */
 	public ChatPanel(ChatbotController baseController)
 	{
 		super();
@@ -64,6 +73,9 @@ public class ChatPanel extends JPanel
 
 	}
 
+	/**
+	 * 
+	 */
 	private void setupLayout()
 	{
 		// TextArea
@@ -85,6 +97,9 @@ public class ChatPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.WEST, randomButton, -5, SpringLayout.WEST, chatArea);
 	}
 
+	/**
+	 * 
+	 */
 	private void setupListeners()
 	{
 		chatButton.addActionListener(new ActionListener()
@@ -124,6 +139,9 @@ public class ChatPanel extends JPanel
 		});
 	}
 
+	/**
+	 * 
+	 */
 	private void changeRandomColor()
 	{
 		int red = (int) (Math.random() * 256);

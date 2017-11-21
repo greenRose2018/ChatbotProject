@@ -3,6 +3,11 @@ package chat.view;
 import chat.controller.ChatbotController;
 import javax.swing.JFrame;
 
+/**
+ * 
+ * @author bmor9741
+ * @version 11-21-17 1.0
+ */
 public class ChatFrame extends JFrame
 {
 	private ChatbotController baseController;

@@ -2,6 +2,12 @@ package chat.view;
 
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
+
+/**
+ * 
+ * @author bmor9741
+ *
+ */
 public class PopupDisplay
 {
 	private ImageIcon icon;

@@ -4,6 +4,11 @@ import chat.model.Chatbot;
 import chat.view.PopupDisplay;
 import chat.view.ChatFrame;
 
+/**
+ * 
+ * @author bmor9741
+ *
+ */
 public class ChatbotController
 {
 	private PopupDisplay display;

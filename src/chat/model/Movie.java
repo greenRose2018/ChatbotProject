@@ -2,6 +2,11 @@ package chat.model;
 
 import java.time.LocalDate;
 
+/**
+ * 
+ * @author bmor9741
+ *
+ */
 public class Movie
 {
 	private String title;
