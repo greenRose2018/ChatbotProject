@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JComponent;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.JLabel;
 
 /**
  * The JPanel subclass for the chatbot project.
@@ -23,6 +24,7 @@ public class ChatPanel extends JPanel
 	private JButton checkerButton;
 	private JButton exitButton;
 	private JButton randomButton;
+	private JLabel infoLabel;
 	private SpringLayout baseLayout;
 	private JTextField inputField;
 	private JTextArea chatArea;
@@ -40,11 +42,13 @@ public class ChatPanel extends JPanel
 		chatButton = new JButton("chat");
 		exitButton = new JButton("Exit");
 		randomButton = new JButton("Random, Click me");
+		infoLabel = new JLabel("Type here to chat with Chatbot");
 		checkerButton = new JButton("check");
 		baseLayout = new SpringLayout();
 
 		inputField = new JTextField(25);
 		chatArea = new JTextArea(10, 25);
+		
 
 		setupPanel();
 		setupLayout();
@@ -64,7 +68,7 @@ public class ChatPanel extends JPanel
 		this.add(exitButton);
 		this.add(randomButton);
 		this.add(checkerButton);
-		
+		this.add(infoLabel);
 		//text area
 		this.add(inputField);
 		this.add(chatArea);
@@ -88,6 +92,8 @@ public class ChatPanel extends JPanel
 		// TextField
 		baseLayout.putConstraint(SpringLayout.NORTH, inputField, 0, SpringLayout.NORTH, chatButton);
 		baseLayout.putConstraint(SpringLayout.SOUTH, inputField, 0, SpringLayout.SOUTH, chatButton);
+		baseLayout.putConstraint(SpringLayout.NORTH, infoLabel, 6, SpringLayout.SOUTH, chatArea);
+		baseLayout.putConstraint(SpringLayout.WEST, infoLabel, 0, SpringLayout.WEST, chatArea);
 
 		// buttons
 		baseLayout.putConstraint(SpringLayout.SOUTH, chatButton, -34, SpringLayout.SOUTH, this);
@@ -134,6 +140,14 @@ public class ChatPanel extends JPanel
 		});
 
 		randomButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				changeRandomColor();
+			}
+		});
+		
+		checkerButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent click)
 			{

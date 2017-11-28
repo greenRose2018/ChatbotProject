@@ -5,7 +5,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 
 /**
- * 
+ * Chatbot object, includes chatbot topics: movies,shopping, memes, verbs, questions, and content.
  * @author brittney.morales
  * @version 11/21/17 1.2
  */
@@ -155,6 +155,24 @@ public class Chatbot
 			response += "\n" + movieList.get(random).getTitle() + " is a great movie!";
 		}
 		
+		int followup = (int) (Math.random() * 5);
+		
+		switch(followup)
+		{
+		case 0:
+			response += followUps[0] + "\n";
+			break;
+		case 3:
+			response += followUps[1] + "\n";
+			break;
+		case 1:
+			response += followUps[2] + "\n";
+			break;
+		default:
+			response += followUps[4] + "\n";
+			response += followUps[3] + "\n";
+			break;
+		}
 		
 		return response;
 	}
