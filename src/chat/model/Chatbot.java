@@ -204,6 +204,36 @@ public class Chatbot
 	 */
 	public boolean htmlTagChecker(String input)
 	{
+		Boolean answer = false;
+		if(input == null || !input.contains("<"))
+		{
+			return answer;
+		}
+		int firstOpen = input.indexOf("<");
+		int firstClose = input.indexOf(">", firstOpen);
+		int secondOpen = -9;
+		int secondClose = -9;
+		String tagText = "";
+		
+		if(input.contains("<>") || input.indexOf("< >") > -1)
+		{
+			answer = false;
+		}
+		
+		if (input.toUpperCase().contains("<P>") || input.toLowerCase().contains("<br>"))
+		{
+			answer = true;
+		}
+		
+		else if (firstClose  > firstOpen)
+		{
+			
+			
+			//Others
+			tagText = input.substring(firstOpen + 1,  firstClose).toLowerCase();
+			secondOpen = input.toLowerCase().indexOf("</" + tagText, firstClose);
+		}
+		/*
 		String[] htmlTag = {"<B>  </B>","<P>","<I> sdadas </i>","<A HREF=\"sdfs.html\"> </a>"};
 		for(String tag:htmlTag)
 		{
