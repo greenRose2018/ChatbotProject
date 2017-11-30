@@ -209,10 +209,27 @@ public class Chatbot
 		{
 			if(input.equals(tag))
 			{
-				return true;
+				answer = true;
+				return answer;
 			}
-		}
-		return false;
+		}*/
+		/*
+		for()
+		{
+			if()
+			{
+				
+			}
+			else if()
+			{
+				
+			}
+			else
+			{
+				
+			}
+		}*/
+		return answer;
 	}
 	
 	/**
