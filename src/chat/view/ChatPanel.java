@@ -85,7 +85,6 @@ public class ChatPanel extends JPanel
 		//text area
 		this.add(inputField);
 		this.add(chatScrollPane);
-		this.add(chatArea);
 		chatArea.setEnabled(false);
 		chatArea.setEditable(false);
 
