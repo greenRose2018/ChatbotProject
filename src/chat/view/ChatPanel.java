@@ -11,6 +11,8 @@ import javax.swing.JComponent;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+//Need import for scrollpane
+import javax.swing.JScrollPane;
 
 /**
  * The JPanel subclass for the chatbot project.
@@ -28,6 +30,8 @@ public class ChatPanel extends JPanel
 	private SpringLayout baseLayout;
 	private JTextField inputField;
 	private JTextArea chatArea;
+	private JScrollPane chatScrollPane;
+	
 
 	/**
 	 * Initializes GUI data members, also calling Panel, layout, and listeners methods
@@ -45,7 +49,8 @@ public class ChatPanel extends JPanel
 		infoLabel = new JLabel("Type here to chat with Chatbot");
 		checkerButton = new JButton("check");
 		baseLayout = new SpringLayout();
-
+		
+		chatScrollPane = new JScrollPane();
 		inputField = new JTextField(25);
 		chatArea = new JTextArea(10, 25);
 		
@@ -71,12 +76,14 @@ public class ChatPanel extends JPanel
 		this.add(infoLabel);
 		//text area
 		this.add(inputField);
+		this.add(chatScrollPane);
 		this.add(chatArea);
 		chatArea.setEnabled(false);
 		chatArea.setEditable(false);
 
 	}
 
+	
 	/**
 	 * the constraint on the components on the Frame
 	 */
