@@ -124,6 +124,7 @@ public class Chatbot
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
+		chatbotResponse +=  currentTime.getHour() + ":" + currentTime.getMinute() + " ";
 		chatbotResponse += "\n" + "you said: " + "\n" + input + "\n";
 		chatbotResponse += buildChatbotResponse();
 		
