@@ -3,7 +3,7 @@ package chat.model;
 import java.time.LocalDate;
 
 /**
- * 
+ * Movie object, gives title, genre, rating, review, releaseDate, and starScore.
  * @author brittney.morales
  * @version 11/21/17 1.2
  */

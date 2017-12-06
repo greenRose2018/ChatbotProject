@@ -264,7 +264,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * 
+	 * Checks username of user
 	 * @param input
 	 * @return
 	 */
@@ -281,7 +281,7 @@ public class Chatbot
 			return false;
 	}
 	/**
-	 * 
+	 * Checks if there is any content for the user input
 	 * @param contentCheck
 	 * @return
 	 */
@@ -296,6 +296,11 @@ public class Chatbot
 		return false;
 	}
 	
+	/**
+	 * Passes only appropriate memes and stops the chat bot from passing any inappropriate memes
+	 * @param input
+	 * @return
+	 */
 	public boolean cuteAnimalMemeChecker(String input)
 	{
 		for(String meme:cuteAnimalMemes)
@@ -308,6 +313,11 @@ public class Chatbot
 		return false;
 	}
 	
+	/**
+	 * Checks if everything needed is inside the shopping list
+	 * @param shoppingItem
+	 * @return
+	 */
 	public boolean shoppingListChecker(String shoppingItem)
 	{
 		
@@ -346,6 +356,11 @@ public class Chatbot
 		
 	}
 	
+	/**
+	 * check if all required movies are inside the movieTitle list
+	 * @param title
+	 * @return
+	 */
 	public boolean movieTitleChecker(String title)
 	{
 		// needs work
@@ -359,6 +374,11 @@ public class Chatbot
 		return false;
 	}
 	
+	/**
+	 * Checks the movies for genres
+	 * @param genre
+	 * @return
+	 */
 	public boolean movieGenreChecker(String genre)
 	{
 		String[] movieGenre = {"Documentary", "Thriller"};
@@ -372,6 +392,11 @@ public class Chatbot
 		return false;
 	}
 
+	/**
+	 * checks for the user response of "quit", to take the action of exiting the program
+	 * @param exitString
+	 * @return
+	 */
 	public boolean quitChecker(String exitString)
 	{
 		if(lengthChecker(exitString) == true)
@@ -383,7 +408,13 @@ public class Chatbot
 		}		
 		return false;
 	}
-
+	
+	
+	/**
+	 * checks for random words and symbols from the user response.
+	 * @param sample
+	 * @return
+	 */
 	public boolean keyboardMashChecker(String sample)
 	{
 		String[] keyboardMash = {"sdf","SDF","dfg","cvb",",./","kjh","DFG","CVB","KJH"};
