@@ -232,9 +232,22 @@ public class Chatbot
 		else if (firstClose  > firstOpen)
 		{
 			//Others
-			tagText = input.substring(firstOpen + 1,  firstClose).toLowerCase();
+			tagText = input.substring(firstOpen + 1,  firstClose).trim().toLowerCase();
 			secondOpen = input.toLowerCase().indexOf("</" + tagText, firstClose);
+			secondClose = input.toLowerCase().indexOf(firstClose + 1);
+			
+			if(secondClose < secondOpen)
+			{
+				answer = true;
+			}
+			else
+			{
+				answer = false;
+			}
 		}
+		
+		return answer;
+		
 		/*
 		String[] htmlTag = {"<B>  </B>","<P>","<I> sdadas </i>","<A HREF=\"sdfs.html\"> </a>"};
 		for(String tag:htmlTag)
