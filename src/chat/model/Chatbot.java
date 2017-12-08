@@ -116,7 +116,8 @@ public class Chatbot
 	}
 	
 	/**
-	 * This method does calls buildChabotResponse, which randomly pulls a verb,topic,movieList,or movietitle and returns a response. 
+	 * This method does calls buildChabotResponse, which randomly pulls a verb,topic,movieList,
+	 * or movietitle and returns a response. 
 	 * Takes the user input and combines with a generated response and returns it.
 	 * @param input The user's supplied text.
 	 * @return The combined user input and chatbot response 
@@ -199,7 +200,7 @@ public class Chatbot
 	}
 	
 	/**
-	 * checks for an htmlTag
+	 * checks for an htmlTag, by just using arrows and not worrying about what's in-between.
 	 * @param input The user's response
 	 * @return True if user's response is a htmlTag
 	 */
@@ -210,8 +211,10 @@ public class Chatbot
 		{
 			return answer;
 		}
+		
 		int firstOpen = input.indexOf("<");
 		int firstClose = input.indexOf(">", firstOpen);
+		
 		int secondOpen = -9;
 		int secondClose = -9;
 		String tagText = "";
@@ -228,8 +231,6 @@ public class Chatbot
 		
 		else if (firstClose  > firstOpen)
 		{
-			
-			
 			//Others
 			tagText = input.substring(firstOpen + 1,  firstClose).toLowerCase();
 			secondOpen = input.toLowerCase().indexOf("</" + tagText, firstClose);
@@ -244,23 +245,8 @@ public class Chatbot
 				return answer;
 			}
 		}*/
-		/*
-		for()
-		{
-			if()
-			{
-				
-			}
-			else if()
-			{
-				
-			}
-			else
-			{
-				
-			}
-		}*/
-		return answer;
+		
+		
 	}
 	
 	/**
