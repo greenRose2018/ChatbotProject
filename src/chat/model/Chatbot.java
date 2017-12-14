@@ -244,6 +244,15 @@ public class Chatbot
 			{
 				answer = false;
 			}
+			
+			if(input.contains("=") && input.contains( ">" ) && input.contains("</"))
+			{
+				answer = true;
+			}
+		}
+		else
+		{
+			answer = false;
 		}
 		
 		return answer;
