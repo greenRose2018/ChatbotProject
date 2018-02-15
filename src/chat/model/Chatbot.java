@@ -436,10 +436,21 @@ public class Chatbot
 		return false;
 	}
 	
-//	public void sendTweet()
+//	public void sendTweet(String tweet)
 //	{
+//		int characters = 280;
+	
 //		chatbotTwitter.updateStatus("I just tweeted from my java Chatbot program! #APCSRocks @CTECNow Thanks"
 //				+ " @cacheerLeader & @codyhenrichsen! Brittney");
+//		if(characters < 281)
+//		{
+//			
+//		}
+//		else
+//		{
+//			//substring longer
+//		}
+//	
 //	}
 	
 	public List<Movie> getMovieList()
