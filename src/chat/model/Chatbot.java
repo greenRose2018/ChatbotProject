@@ -436,6 +436,12 @@ public class Chatbot
 		return false;
 	}
 	
+//	public void sendTweet()
+//	{
+//		chatbotTwitter.updateStatus("I just tweeted from my java Chatbot program! #APCSRocks @CTECNow Thanks"
+//				+ " @cacheerLeader & @codyhenrichsen! Brittney");
+//	}
+	
 	public List<Movie> getMovieList()
 	{
 		return movieList;
