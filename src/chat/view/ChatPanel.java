@@ -152,6 +152,37 @@ public class ChatPanel extends JPanel
 			}
 		});
 		
+		saveBtn.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+			}
+		});
+		
+		loadBtn.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+			}
+		});
+		
+		searchButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+			}
+		});
+		
+		tweetBtn.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				
+			}
+		});
 
 		checkerButton.addActionListener(new ActionListener()
 		{
@@ -181,13 +212,6 @@ public class ChatPanel extends JPanel
 			}
 		});
 		
-		checkerButton.addActionListener(new ActionListener()
-		{
-			public void actionPerformed(ActionEvent click)
-			{
-				changeRandomColor();
-			}
-		});
 	}
 
 	/**
