@@ -31,17 +31,17 @@ public class ChatbotController
 	 */
 	public void start()
 	{
-		display.displayText("Welcome to Chatbot");
-		
-		
-	//all the code below will no longer be needed	
-		String response = display.collectResponse("What do you want to talk about?");
-		
-		while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response));
-		{
-			response = popupChat(response);
-			response = display.collectResponse(response);
-		}
+//		display.displayText("Welcome to Chatbot");
+//		
+//		
+//	//all the code below will no longer be needed	
+//		String response = display.collectResponse("What do you want to talk about?");
+//		
+//		while (chatbot.lengthChecker(response) && !chatbot.quitChecker(response));
+//		{
+//			response = popupChat(response);
+//			response = display.collectResponse(response);
+//		}
 	}
 	
 	/**
