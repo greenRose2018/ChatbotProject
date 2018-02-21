@@ -1,18 +1,10 @@
 package chat.view;
 
 import chat.controller.ChatbotController;
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import javax.swing.SpringLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JComponent;
-import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
-//Need import for scrollpane
-import javax.swing.JScrollPane;
+import javax.swing.*;
 
 /**
  * The JPanel subclass for the chatbot project.
