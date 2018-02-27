@@ -8,4 +8,14 @@ import java.util.Scanner;
 
 public class IOController
 {
+	public static void saveToFile(ChatbotController app, String textToSave, String path)
+	{
+		
+	}
+
+	public static String loadFromFile(ChatbotController app, String filename)
+	{
+		String results = "";
+		return results;
+	}
 }
