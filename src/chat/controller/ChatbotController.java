@@ -4,6 +4,7 @@ import chat.model.Chatbot;
 import chat.view.PopupDisplay;
 import chat.view.ChatFrame;
 import chat.model.CTECTwitter;
+import chat.controller.IOController;
 
 /**
  * Calling methods to build window and to start interaction with chatbot.
@@ -45,6 +46,7 @@ public class ChatbotController
 //			response = popupChat(response);
 //			response = display.collectResponse(response);
 //		}
+		IOController.loadFromFile(this,  "commonWords.txt");
 	}
 	
 	/**
