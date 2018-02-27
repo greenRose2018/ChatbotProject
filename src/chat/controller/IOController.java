@@ -52,6 +52,9 @@ public class IOController
 		
 		try
 		{
+			//Opens at root level of project
+			// AKA in the Chatbot201  folder
+			
 			File openFile = new File(filename);
 			Scanner fileScanner = new Scanner(openFile);
 			
