@@ -47,7 +47,7 @@ public class ChatbotController
 //			response = display.collectResponse(response);
 //		}
 		String results = IOController.loadFromFile(this,  "commonWords.txt");
-		IOController.saveToFile(this, results, "readText.txt");
+		IOController.saveToFile(this, results, "readTet");
 	}
 	
 	/**
