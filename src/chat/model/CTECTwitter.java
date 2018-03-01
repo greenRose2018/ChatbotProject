@@ -130,7 +130,7 @@ public class CTECTwitter
 	private String [] createIgnoreWordArray()
 	{
 		String [] boringWords;
-		String gileText = IOController.loadFromFile(appController,  "commonWords.txt");
+		String fileText = IOController.loadFromFile(appController,  "commonWords.txt");
 		int wordCount = 0;
 		
 		Scanner wordScanner = new Scanner(fileText);
