@@ -95,6 +95,20 @@ public class CTECTwitter
 		return mostCommon;
 		
 	}
+	
+	private void turnStatusesToWords()
+	{
+		for(Status currentStatus : searchedTweets)
+		{
+			String tweetText = currentStatus.getText();
+			String [] tweetWords = tweetText.split(" ");
+			for(int index = 0; index < tweetWords.length; index++)
+			{
+				tweetedWords.add(removePunctuation(tweetWords[index]).trim());
+			}
+		}
+	}
+	
 //	
 //	private void removeEmptyText()
 //	{
