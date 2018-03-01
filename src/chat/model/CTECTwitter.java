@@ -126,6 +126,37 @@ public class CTECTwitter
 		}
 		return  scrubbedString;
 	}
+	
+	private String [] createIgnoreWordArray()
+	{
+		String [] boringWords;
+		String gileText = IOController.loadFromFile(appController,  "commonWords.txt");
+		int wordCount = 0;
+		
+		Scanner wordScanner = new Scanner(fileText);
+		
+		while(wordScanner.hasNextLine())
+		{
+			wordScanner.nextLine();
+			wordCount++;
+		}
+		
+		boringWords = new String [wordCount];
+		wordScanner.close();
+		
+		//Alternative file loading method.
+		// Uses the inputStream class
+		//Notice the lack of try/catch
+		
+		wordScanner = new Scanner(this.getClass().getResourceAsStream("data/commonWords.txt"));
+		for(int index = 0; index < boringWords.length; index++)
+		{
+			boringWords[index] = wordScanner.nextLine();
+		}
+		
+		wordScanner.close();
+		return boringWords;
+	}
 //	
 //	private void removeEmptyText()
 //	{
