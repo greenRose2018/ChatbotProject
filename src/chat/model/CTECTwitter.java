@@ -23,6 +23,7 @@ public class CTECTwitter
 	private Twitter chatbotTwitter;
 	private List<Status> searchedTweets;
 	private List<String> tweetedWords;
+	private long totalWordCount;
 	
 	public CTECTwitter(ChatbotController appController)
 	{
@@ -30,7 +31,7 @@ public class CTECTwitter
 		this.chatbotTwitter = TwitterFactory.getSingleton();
 		this.searchedTweets = new ArrayList<Status>();
 		this.tweetedWords = new ArrayList<String>();
-		
+		totalWordCount = 0;
 	}
 	
 	public void sendTweet(String textToTweet)
@@ -91,6 +92,8 @@ public class CTECTwitter
 		String mostCommon = "";
 		
 		collectTweets(username);
+		turnStatusesToWords();
+		totalWordCount = ;
 		
 		return mostCommon;
 		
