@@ -21,13 +21,15 @@ public class CTECTwitter
 {
 	private ChatbotController appController;
 	private Twitter chatbotTwitter;
-	private List<Status> searchedTweeets;
-	private List<String> weetedWords;
+	private List<Status> searchedTweets;
+	private List<String> tweetedWords;
 	
 	public CTECTwitter(ChatbotController appController)
 	{
 		this.appController = appController;
 		this.chatbotTwitter = TwitterFactory.getSingleton();
+		this.searchedTweets = new ArrayList<Status>();
+		this.tweetedWords = new ArrayList<String>();
 		
 	}
 	
@@ -52,15 +54,16 @@ public class CTECTwitter
 //		
 //	}
 //	
-//	private void collectTweets(String username)
-//	{
-//		
 //	}
-//	
-//	public String getMostCommonWord(String user)
-//	{
-//		
-//	}
+	public String getMostCommonWord(String username)
+	{
+		String mostCommon = "";
+		
+		collectTweets(username);
+		
+		return mostCommon;
+		
+	}
 //	
 //	private void removeEmptyText()
 //	{
