@@ -110,11 +110,16 @@ public class CTECTwitter
 				if(tweetedWords.get(index).equals(boringWords[boringIndex]))
 				{
 					tweetedWords.remove(index);
-					boringIndex = Integer.MAX_VALUE;
+					boringIndex = boringWords.length;
 				}
 			}
 		}
 	}
+	
+//	private void countMostCommonWords(String [] )
+//	{
+//		
+//	}
 	
 	private void turnStatusesToWords()
 	{
