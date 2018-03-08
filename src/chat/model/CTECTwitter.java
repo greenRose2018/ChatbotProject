@@ -54,11 +54,6 @@ public class CTECTwitter
 		}
 	}
 	
-//	private String[] createIgnoredWordArray()
-//	{
-//		
-//	}
-//	
 	private void collectTweets(String username)
 	{
 		searchedTweets.clear();
@@ -119,11 +114,6 @@ public class CTECTwitter
 			}
 		}
 	}
-	
-//	private void countMostCommonWords(String [] )
-//	{
-//		
-//	}
 	
 	private void turnStatusesToWords()
 	{
