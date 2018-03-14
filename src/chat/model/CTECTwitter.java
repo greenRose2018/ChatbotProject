@@ -101,15 +101,31 @@ public class CTECTwitter
 		removeBlanks();
 		generateWordCount();
 		
+		ArrayList<Map.Entry<String, Integer>> sorted = sortHashMap();
+		
+		String mostCommonWord = sorted.get(0).getKey();
 		int maxWord = 0;
 		
-		Hashtable<String, Integer> topOne = wordsAndCount.entrySet().stream()
-				.sorted(Map.Entry.comparingByValue()).limit(1)
-				.collect(Collectors.toMap(Map.Entry  :: getKey, Map.Entry :: getValue,
-						(e1, e2) -> HashTable :: new));
+		maxWord = sorted.get(0).getValue();
 		
+		mostCommon = "The most common Word in "  + username + "'s " + searchedTweets.size() + " tweets is " 
+					+ mostCommonWord + ", and it was used " + maxWord + " times.\nThis is "
+					+ (DecimalFormat.getPercentInstance().format(((double) maxWord)/totalWordCount)) +
+					" of total words: " + totalWordCount + " and is " + 
+					(DecimalFormat.getPercentInstance().format(((double) maxWord)/wordsAndCount.size())) +
+					" of the unique words: " + wordsAndCount.size();
+		
+		mostCommon += "\n\n" + sortedWords();
+				
 		return mostCommon;
 		
+	}
+	
+	private String sortedWords()
+	{
+		String word = "";
+		
+		return word;
 	}
 	
 	private void trimTheBoringWords(String [] boringWords)
