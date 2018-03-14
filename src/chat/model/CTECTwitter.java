@@ -123,9 +123,31 @@ public class CTECTwitter
 	
 	private String sortedWords()
 	{
-		String word = "";
+		String allWords = "";
+		String [] words = (String []) wordsAndCount.keySet().toArray();
+		for( int index = 0; index < words.length - 1; index++)
+		{
+			int maxIndex = index;
+			
+			for( int inner = index + 1; inner < words.length: inner++)
+			{
+				if(words[inner].compareTo(words[maxIndex]) > 0)
+				{
+					maxIndex = inner;
+				}
+			}
+			
+			String tempMax = words[maxIndex];
+			words[maxIndex] = words[index];
+			words[index] = tempMax;
+		}
 		
-		return word;
+		for(String word: words)
+		{
+			allWords += word + ", ";
+		}
+		
+		return allWords;
 	}
 	
 	private ArrayList<Map.Entry<String, Integer>> sortHashMap()
@@ -135,6 +157,7 @@ public class CTECTwitter
 		
 		return entries;
 	}
+	
 	private void trimTheBoringWords(String [] boringWords)
 	{
 		for (int index = tweetedWords.size() - 1; index >= 0; index--)
