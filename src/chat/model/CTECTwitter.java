@@ -129,7 +129,7 @@ public class CTECTwitter
 		{
 			int maxIndex = index;
 			
-			for( int inner = index + 1; inner < words.length: inner++)
+			for( int inner = index + 1; inner < words.length; inner++)
 			{
 				if(words[inner].compareTo(words[maxIndex]) > 0)
 				{
