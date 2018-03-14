@@ -128,6 +128,13 @@ public class CTECTwitter
 		return word;
 	}
 	
+	private ArrayList<Map.Entry<String, Integer>> sortHashMap()
+	{
+		ArrayList<Map.Entry<String, Integer>> entries = new ArrayList<Map.Entry<String,Integer>>(wordsAndCount.entrySet());
+		entries.sort((entry1,entry2) -> entry2.getValue().compareTo(entry1.getValue()));
+		
+		return entries;
+	}
 	private void trimTheBoringWords(String [] boringWords)
 	{
 		for (int index = tweetedWords.size() - 1; index >= 0; index--)
