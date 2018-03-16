@@ -127,6 +127,11 @@ public class CTECTwitter
 		String [] words = new  String [wordsAndCount.size()];
 		ArrayList<String> wordsList = new ArrayList<String>(wordsAndCount.keySet());
 		
+		for(int index = 0; index < wordsList.size(); index++)
+		{
+			words[index] = wordsList.get(index);
+		}
+		
 		for( int index = 0; index < words.length - 1; index++)
 		{
 			int maxIndex = index;
@@ -158,6 +163,39 @@ public class CTECTwitter
 		entries.sort((entry1,entry2) -> entry2.getValue().compareTo(entry1.getValue()));
 		
 		return entries;
+	}
+	
+	public String analyzeTwitterForTop(String topic)
+	{
+		String results  = "";
+		searchedTweets.clear();
+		Query twitterQuery = new Query(topic);
+		int resultMax = 750;
+		long lastId = Long.MAX_VALUE;
+		twitterQuery.setGeoCode(new GeoLocation(40.760779, -111.891047), 1.0, Query.MILES);
+		ArrayList<Status> matchingTweets = new ArrayList<Status>();
+		
+		while(searchedTweets.size() < resultMax)
+		{
+			try
+			{
+				QueryResult resultingTweets = chatbotTwitter.search(twitterQuery);
+			}
+			catch(TwitterException error)
+			{
+				appController.handleErrors(error);
+			}
+			
+			twitterQuery.setMaxId(lastId -1);
+		}
+		
+		results += "Talk about the search results";
+		results += "Find a tweet that will pass on of the checkers in chatbot";
+		
+		int randomTweet = (int) (Math.random() * matchingTweets.size());
+		results += matchingTweets.get(randomTweet);
+		
+		return results;
 	}
 	
 	private void trimTheBoringWords(String [] boringWords)
