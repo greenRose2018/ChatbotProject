@@ -100,6 +100,7 @@ public class CTECTwitter
 		trimTheBoringWords(boring);
 		removeBlanks();
 		generateWordCount();
+		analyzeTwitterForTop("funny");
 		
 		ArrayList<Map.Entry<String, Integer>> sorted = sortHashMap();
 		
@@ -109,7 +110,7 @@ public class CTECTwitter
 		maxWord = sorted.get(0).getValue();
 		
 		mostCommon = "The most common Word in "  + username + "'s " + searchedTweets.size() + " tweets is " 
-					+ mostCommonWord + ", and it was used " + maxWord + " times.\nThis is "
+					+ mostCommonWord + ", and it was \nused " + maxWord + " times.\nThis is "
 					+ (DecimalFormat.getPercentInstance().format(((double) maxWord)/totalWordCount)) +
 					" of total words: " + totalWordCount + " and is " + 
 					(DecimalFormat.getPercentInstance().format(((double) maxWord)/wordsAndCount.size())) +
@@ -151,7 +152,7 @@ public class CTECTwitter
 		
 		for(String word: words)
 		{
-			allWords += word + ", ";
+			allWords += word + ", \n";
 		}
 		
 		return allWords;
@@ -172,7 +173,7 @@ public class CTECTwitter
 		Query twitterQuery = new Query(topic);
 		int resultMax = 750;
 		long lastId = Long.MAX_VALUE;
-		twitterQuery.setGeoCode(new GeoLocation(40.760779, -111.891047), 1.0, Query.MILES);
+		twitterQuery.setGeoCode(new GeoLocation(40.760779, -111.891047), .5, Query.MILES);
 		ArrayList<Status> matchingTweets = new ArrayList<Status>();
 		
 		while(searchedTweets.size() < resultMax)
@@ -197,6 +198,40 @@ public class CTECTwitter
 		
 		return results;
 	}
+	
+	public String analyzeTwitterForPop(String topic)
+	{
+		String results  = "";
+		searchedTweets.clear();
+		Query twitterQuery = new Query(topic);
+		int resultMax = 750;
+		long lastId = Long.MAX_VALUE;
+		twitterQuery.setResultType(Query.POPULAR);
+		ArrayList<Status> matchingTweets = new ArrayList<Status>();
+		
+		while(searchedTweets.size() < resultMax)
+		{
+			try
+			{
+				QueryResult resultingTweets = chatbotTwitter.search(twitterQuery);
+			}
+			catch(TwitterException error)
+			{
+				appController.handleErrors(error);
+			}
+			
+			twitterQuery.setMaxId(lastId -1);
+		}
+		
+		results += "Talk about the search results";
+		results += "Find a tweet that will pass on of the checkers in chatbot";
+		
+		int randomTweet = (int) (Math.random() * matchingTweets.size());
+		results += matchingTweets.get(randomTweet);
+		
+		return results;
+	}
+	
 	
 	private void trimTheBoringWords(String [] boringWords)
 	{
