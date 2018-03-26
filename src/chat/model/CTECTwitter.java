@@ -181,6 +181,20 @@ public class CTECTwitter
 			try
 			{
 				QueryResult resultingTweets = chatbotTwitter.search(twitterQuery);
+				
+				for(Status currentTweet: resultingTweets.getTweets())
+				{
+//					if(currentTweet.isRetweeted())
+//					{
+//						
+//					}
+					
+					if(currentTweet.getId() < lastId)
+					{
+						matchingTweets.add(currentTweet);
+						lastId = currentTweet.getId();
+					}
+				}
 			}
 			catch(TwitterException error)
 			{
