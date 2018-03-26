@@ -43,6 +43,7 @@ public class CTECTwitter
 	
 	public void sendTweet(String textToTweet)
 	{
+		analyzeTwitterForTop("funny");
 		try
 		{
 			chatbotTwitter.updateStatus(textToTweet + "@ChatbotCTEC");
@@ -100,7 +101,7 @@ public class CTECTwitter
 		trimTheBoringWords(boring);
 		removeBlanks();
 		generateWordCount();
-		analyzeTwitterForTop("funny");
+		
 		
 		ArrayList<Map.Entry<String, Integer>> sorted = sortHashMap();
 		
