@@ -60,10 +60,8 @@ public class CTECTwitter
 	
 	private void collectTweets(String username)
 	{
-		
 		searchedTweets.clear();
 		tweetedWords.clear();
-		
 		Paging statusPage = new Paging(1,100);
 		int page = 1;
 		long lastID = Long.MAX_VALUE;
@@ -93,6 +91,7 @@ public class CTECTwitter
 	
 	public String getMostCommonWord(String username)
 	{
+//		analyzeTwitter(username);
 		String mostCommon = "";
 		collectTweets(username);
 		turnStatusesToWords();
@@ -101,7 +100,7 @@ public class CTECTwitter
 		trimTheBoringWords(boring);
 		removeBlanks();
 		generateWordCount();
-		//analyzeTwitter(username);
+		
 		
 		ArrayList<Map.Entry<String, Integer>> sorted = sortHashMap();
 		
@@ -167,53 +166,6 @@ public class CTECTwitter
 		return entries;
 	}
 	
-	public String analyzeTwitterForTop(String topic)
-	{
-		String results  = "";
-		int retweets = 0;
-		searchedTweets.clear();
-		Query twitterQuery = new Query(topic);
-		int resultMax = 750;
-		long lastId = Long.MAX_VALUE;
-		twitterQuery.setGeoCode(new GeoLocation(40.760779, -111.891047), .5, Query.MILES);
-		ArrayList<Status> matchingTweets = new ArrayList<Status>();
-		
-		while(searchedTweets.size() < resultMax)
-		{
-			try
-			{
-				QueryResult resultingTweets = chatbotTwitter.search(twitterQuery);
-				
-				for(Status currentTweet: resultingTweets.getTweets())
-				{
-					if(currentTweet.isRetweeted())
-					{
-						retweets++;
-					}
-					
-					if(currentTweet.getId() < lastId)
-					{
-						matchingTweets.add(currentTweet);
-						lastId = currentTweet.getId();
-					}
-				}
-			}
-			catch(TwitterException error)
-			{
-				appController.handleErrors(error);
-			}
-			
-			twitterQuery.setMaxId(lastId -1);
-		}
-		
-		results += "Talk about the search results";
-		results += "Find a tweet that will pass on of the checkers in chatbot";
-		
-		int randomTweet = (int) (Math.random() * matchingTweets.size());
-		results += matchingTweets.get(randomTweet);
-		
-		return results;
-	}
 	public String analyzeTwitter(String topic)
 	{
 		String results = "";
@@ -231,7 +183,6 @@ public class CTECTwitter
                 List<Status> tweets = result.getTweets();
                 for (Status tweet : tweets) {
                     results += "@" + tweet.getUser().getScreenName() + " - " + tweet.getText() + "\n";
-                    return results;
                 }
             } while ((query = result.nextQuery()) != null);
             

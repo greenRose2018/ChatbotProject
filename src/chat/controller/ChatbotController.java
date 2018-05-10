@@ -140,6 +140,6 @@ public class ChatbotController
 	
 	public String search(String text)
 	{
-		return myTwitter.analyzeTwitter(text);
+		return myTwitter.getMostCommonWord(text);
 	}
 }
