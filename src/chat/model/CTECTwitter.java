@@ -43,7 +43,7 @@ public class CTECTwitter
 	
 	public void sendTweet(String textToTweet)
 	{
-		analyzeTwitterForTop("funny");
+		
 		try
 		{
 			chatbotTwitter.updateStatus(textToTweet + "@ChatbotCTEC");
@@ -60,6 +60,7 @@ public class CTECTwitter
 	
 	private void collectTweets(String username)
 	{
+		
 		searchedTweets.clear();
 		tweetedWords.clear();
 		
@@ -93,7 +94,6 @@ public class CTECTwitter
 	public String getMostCommonWord(String username)
 	{
 		String mostCommon = "";
-		
 		collectTweets(username);
 		turnStatusesToWords();
 		totalWordCount = tweetedWords.size();
@@ -101,7 +101,7 @@ public class CTECTwitter
 		trimTheBoringWords(boring);
 		removeBlanks();
 		generateWordCount();
-		
+		//analyzeTwitter(username);
 		
 		ArrayList<Map.Entry<String, Integer>> sorted = sortHashMap();
 		
@@ -170,6 +170,7 @@ public class CTECTwitter
 	public String analyzeTwitterForTop(String topic)
 	{
 		String results  = "";
+		int retweets = 0;
 		searchedTweets.clear();
 		Query twitterQuery = new Query(topic);
 		int resultMax = 750;
@@ -185,10 +186,10 @@ public class CTECTwitter
 				
 				for(Status currentTweet: resultingTweets.getTweets())
 				{
-//					if(currentTweet.isRetweeted())
-//					{
-//						
-//					}
+					if(currentTweet.isRetweeted())
+					{
+						retweets++;
+					}
 					
 					if(currentTweet.getId() < lastId)
 					{
@@ -213,7 +214,34 @@ public class CTECTwitter
 		
 		return results;
 	}
-	
+	public String analyzeTwitter(String topic)
+	{
+		String results = "";
+		if (topic.length() < 1) {
+            System.out.println("java twitter4j.examples.search.SearchTweets [query]");
+            System.exit(-1);
+        }
+        Twitter twitter = new TwitterFactory().getInstance();
+        try {
+            Query query = new Query(topic);
+            query.setGeoCode(new GeoLocation(40.760779, -111.891047), .5, Query.MILES);
+            QueryResult result;
+            do {
+                result = twitter.search(query);
+                List<Status> tweets = result.getTweets();
+                for (Status tweet : tweets) {
+                    results += "@" + tweet.getUser().getScreenName() + " - " + tweet.getText() + "\n";
+                    return results;
+                }
+            } while ((query = result.nextQuery()) != null);
+            
+        } catch (TwitterException te) {
+            te.printStackTrace();
+            System.out.println("Failed to search tweets: " + te.getMessage());
+            System.exit(-1);
+        }
+        return results;
+	}
 	public String analyzeTwitterForPop(String topic)
 	{
 		String results  = "";
