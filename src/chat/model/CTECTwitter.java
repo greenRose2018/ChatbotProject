@@ -91,7 +91,6 @@ public class CTECTwitter
 	
 	public String getMostCommonWord(String username)
 	{
-//		analyzeTwitter(username);
 		String mostCommon = "";
 		collectTweets(username);
 		turnStatusesToWords();
@@ -169,63 +168,41 @@ public class CTECTwitter
 	public String analyzeTwitter(String topic)
 	{
 		String results = "";
-		if (topic.length() < 1) {
+		int num = 1;
+		if (topic.length() < 1) 
+		{
             System.out.println("java twitter4j.examples.search.SearchTweets [query]");
             System.exit(-1);
         }
+		
         Twitter twitter = new TwitterFactory().getInstance();
-        try {
+        try 
+        {
             Query query = new Query(topic);
-            query.setGeoCode(new GeoLocation(40.760779, -111.891047), .5, Query.MILES);
+            query.setGeoCode(new GeoLocation(40.760779, -111.891047), 1, Query.MILES);
             QueryResult result;
-            do {
+            do 
+            {
                 result = twitter.search(query);
                 List<Status> tweets = result.getTweets();
-                for (Status tweet : tweets) {
-                    results += "@" + tweet.getUser().getScreenName() + " - " + tweet.getText() + "\n";
+                for(int i = 0; i < tweets.size(); i++)
+                {
+                		results += tweets.get(i).getUser().getScreenName() + " - " + tweets.get(i).getText() + "\n";
+                		num++;
                 }
-            } while ((query = result.nextQuery()) != null);
+            } 
+            while ((query = result.nextQuery()) != null);
             
-        } catch (TwitterException te) {
+        } 
+        catch (TwitterException te) 
+        {
             te.printStackTrace();
             System.out.println("Failed to search tweets: " + te.getMessage());
             System.exit(-1);
         }
+        results += "\n" + topic + " is mention about: " + Integer.toString(num) + " times in the area.";
         return results;
-	}
-	public String analyzeTwitterForPop(String topic)
-	{
-		String results  = "";
-		searchedTweets.clear();
-		Query twitterQuery = new Query(topic);
-		int resultMax = 750;
-		long lastId = Long.MAX_VALUE;
-		twitterQuery.setResultType(Query.POPULAR);
-		ArrayList<Status> matchingTweets = new ArrayList<Status>();
-		
-		while(searchedTweets.size() < resultMax)
-		{
-			try
-			{
-				QueryResult resultingTweets = chatbotTwitter.search(twitterQuery);
-			}
-			catch(TwitterException error)
-			{
-				appController.handleErrors(error);
-			}
-			
-			twitterQuery.setMaxId(lastId -1);
-		}
-		
-		results += "Talk about the search results";
-		results += "Find a tweet that will pass on of the checkers in chatbot";
-		
-		int randomTweet = (int) (Math.random() * matchingTweets.size());
-		results += matchingTweets.get(randomTweet);
-		
-		return results;
-	}
-	
+	}	
 	
 	private void trimTheBoringWords(String [] boringWords)
 	{

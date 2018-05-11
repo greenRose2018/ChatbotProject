@@ -16,6 +16,7 @@ public class ChatPanel extends JPanel
 	private ChatbotController baseController;
 	private JButton chatButton;
 	private JButton searchButton;
+	private JButton searchTopicBtn;
 	private JButton saveBtn;
 	private JButton loadBtn;
 	private JButton tweetBtn;
@@ -41,6 +42,7 @@ public class ChatPanel extends JPanel
 		// initialize GUI data members
 		chatButton = new JButton("Chat", new ImageIcon(getClass().getResource("/chat/view/images/chat.png")));
 		searchButton = new JButton("Search", new ImageIcon(getClass().getResource("/chat/view/images/search.png")));
+		searchTopicBtn = new JButton("Search Topic");
 		saveBtn = new JButton("Save", new ImageIcon(getClass().getResource("/chat/view/images/save.png")));
 		loadBtn = new JButton("Load", new ImageIcon(getClass().getResource("/chat/view/images/load.png")));
 		tweetBtn = new JButton("Tweet", new ImageIcon(getClass().getResource("/chat/view/images/bird.png")));
@@ -49,6 +51,10 @@ public class ChatPanel extends JPanel
 		infoLabel = new JLabel("Type here to chat with Chatbot");
 		checkerButton = new JButton("check");
 		baseLayout = new SpringLayout();
+		baseLayout.putConstraint(SpringLayout.NORTH, searchTopicBtn, 6, SpringLayout.SOUTH, searchButton);
+		baseLayout.putConstraint(SpringLayout.WEST, searchTopicBtn, 0, SpringLayout.WEST, randomButton);
+		baseLayout.putConstraint(SpringLayout.SOUTH, searchTopicBtn, 66, SpringLayout.SOUTH, searchButton);
+		baseLayout.putConstraint(SpringLayout.EAST, searchTopicBtn, 104, SpringLayout.WEST, randomButton);
 		chatScrollPane = new JScrollPane();
 		inputField = new JTextField(25);
 		chatArea = new JTextArea(10, 25);
@@ -78,6 +84,7 @@ public class ChatPanel extends JPanel
 		this.add(exitButton);
 		this.add(randomButton);
 		this.add(checkerButton);
+		this.add(searchTopicBtn);
 		this.add(infoLabel);
 		this.add(saveBtn);
 		this.add(loadBtn);
@@ -173,7 +180,15 @@ public class ChatPanel extends JPanel
 				chatArea.setText(baseController.search(usernameToSearch));
 			}
 		});
-		
+		searchTopicBtn.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				String usernameToSearch = inputField.getText();
+				
+				chatArea.setText(baseController.searchTopic(usernameToSearch));
+			}
+		});
 		tweetBtn.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent click)
