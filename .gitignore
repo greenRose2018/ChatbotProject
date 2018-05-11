@@ -1,7 +1,12 @@
+twitter4j.properties
 bin/
 .DS_Store
 */class
+<<<<<<< HEAD
 src/twitter4j.properties
+=======
+
+>>>>>>> AddingTwitterToChatbot
 
 # BlueJ files
 *.ctxt

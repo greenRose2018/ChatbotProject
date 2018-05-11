@@ -3,6 +3,8 @@ package chat.controller;
 import chat.model.Chatbot;
 import chat.view.PopupDisplay;
 import chat.view.ChatFrame;
+import chat.model.CTECTwitter;
+import chat.controller.IOController;
 
 /**
  * Calling methods to build window and to start interaction with chatbot.
@@ -14,6 +16,7 @@ public class ChatbotController
 	private PopupDisplay display;
 	private Chatbot chatbot;
 	private ChatFrame appFrame;
+	private CTECTwitter myTwitter;
 	
 	/**
 	 * initialize data members
@@ -21,6 +24,7 @@ public class ChatbotController
 	public ChatbotController()
 	{
 		chatbot = new Chatbot("Brittney Morales");
+		myTwitter = new CTECTwitter(this);
 		//View initialized after model
 		display = new PopupDisplay();
 		appFrame = new ChatFrame(this);
@@ -42,6 +46,8 @@ public class ChatbotController
 //			response = popupChat(response);
 //			response = display.collectResponse(response);
 //		}
+		String results = IOController.loadFromFile(this,  "commonWords.txt");
+		IOController.saveToFile(this, results, "readTet");
 	}
 	
 	/**
@@ -125,5 +131,20 @@ public class ChatbotController
 	public void handleErrors(Exception error)
 	{
 		display.displayText(error.getMessage());
+	}
+	
+	public void tweet(String text)
+	{
+		myTwitter.sendTweet(text);
+	}
+	
+	public String search(String text)
+	{
+		return myTwitter.getMostCommonWord(text);
+	}
+	
+	public String searchTopic(String text)
+	{
+		return myTwitter.analyzeTwitter(text);
 	}
 }
