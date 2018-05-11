@@ -42,7 +42,7 @@ public class ChatPanel extends JPanel
 		// initialize GUI data members
 		chatButton = new JButton("Chat", new ImageIcon(getClass().getResource("/chat/view/images/chat.png")));
 		searchButton = new JButton("Search", new ImageIcon(getClass().getResource("/chat/view/images/search.png")));
-		searchTopicBtn = new JButton("Search Topic");
+		searchTopicBtn = new JButton("Analyze");
 		saveBtn = new JButton("Save", new ImageIcon(getClass().getResource("/chat/view/images/save.png")));
 		loadBtn = new JButton("Load", new ImageIcon(getClass().getResource("/chat/view/images/load.png")));
 		tweetBtn = new JButton("Tweet", new ImageIcon(getClass().getResource("/chat/view/images/bird.png")));
